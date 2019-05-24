@@ -1,6 +1,7 @@
 package daos;
 
 
+import idaos.IGeneralDAO;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.hibernate.Transaction;
  *
  * @author HP
  */
-public class GeneralDAO<T> {
+public class GeneralDAO<T> implements IGeneralDAO<T>{
 
     private SessionFactory factory;
     private Session session;

@@ -25,7 +25,7 @@ public interface IEmployeeController {
 
     public String save(String id, String firstName, String lastName, String email,
             String phoneNumber, String hireDate, String salary, String commissionPct, 
-            String department, String employeeList, String manager, String job);
+            String department, String manager, String job);
 
     public String delete(String id);
 

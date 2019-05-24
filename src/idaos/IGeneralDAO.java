@@ -7,7 +7,7 @@ import java.util.List;
  */
 public interface IGeneralDAO<T> {
     
-   public T getById(short id);
+   public T getById(Short id);
    public List<T> getData(Object keyword);
    public boolean saveOrDelete(T object, boolean isDelete);
    
