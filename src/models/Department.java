@@ -30,53 +30,53 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Department.findAll", query = "SELECT d FROM Department d")
-    , @NamedQuery(name = "Department.findByDepartmentId", query = "SELECT d FROM Department d WHERE d.departmentId = :departmentId")
-    , @NamedQuery(name = "Department.findByDepartmentName", query = "SELECT d FROM Department d WHERE d.departmentName = :departmentName")})
+    , @NamedQuery(name = "Department.findById", query = "SELECT d FROM Department d WHERE d.id = :id")
+    , @NamedQuery(name = "Department.findByName", query = "SELECT d FROM Department d WHERE d.name = :name")})
 public class Department implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "DEPARTMENT_ID")
-    private Short departmentId;
+    private Short id;
     @Basic(optional = false)
     @Column(name = "DEPARTMENT_NAME")
-    private String departmentName;
-    @OneToMany(mappedBy = "departmentId", fetch = FetchType.LAZY)
+    private String name;
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<Employee> employeeList;
     @JoinColumn(name = "MANAGER_ID", referencedColumnName = "EMPLOYEE_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Employee managerId;
+    private Employee manager;
     @JoinColumn(name = "LOCATION_ID", referencedColumnName = "LOCATION_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Location locationId;
+    private Location location;
 
     public Department() {
     }
 
-    public Department(Short departmentId) {
-        this.departmentId = departmentId;
+    public Department(Short id) {
+        this.id = id;
     }
 
-    public Department(Short departmentId, String departmentName) {
-        this.departmentId = departmentId;
-        this.departmentName = departmentName;
+    public Department(Short id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Short getDepartmentId() {
-        return departmentId;
+    public Short getId() {
+        return id;
     }
 
-    public void setDepartmentId(Short departmentId) {
-        this.departmentId = departmentId;
+    public void setId(Short id) {
+        this.id = id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getName() {
+        return name;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @XmlTransient
@@ -88,26 +88,26 @@ public class Department implements Serializable {
         this.employeeList = employeeList;
     }
 
-    public Employee getManagerId() {
-        return managerId;
+    public Employee getManager() {
+        return manager;
     }
 
-    public void setManagerId(Employee managerId) {
-        this.managerId = managerId;
+    public void setManager(Employee manager) {
+        this.manager = manager;
     }
 
-    public Location getLocationId() {
-        return locationId;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocationId(Location locationId) {
-        this.locationId = locationId;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (departmentId != null ? departmentId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -118,7 +118,7 @@ public class Department implements Serializable {
             return false;
         }
         Department other = (Department) object;
-        if ((this.departmentId == null && other.departmentId != null) || (this.departmentId != null && !this.departmentId.equals(other.departmentId))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -126,7 +126,7 @@ public class Department implements Serializable {
 
     @Override
     public String toString() {
-        return "models.Department[ departmentId=" + departmentId + " ]";
+        return "models.Department[ id=" + id + " ]";
     }
     
 }
