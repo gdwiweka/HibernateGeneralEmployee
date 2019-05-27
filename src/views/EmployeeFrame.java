@@ -7,7 +7,7 @@ package views;
 
 /**
  *
- * @author WINDOWS 10
+ * @author ASUS
  */
 public class EmployeeFrame extends javax.swing.JFrame {
 
@@ -39,11 +39,11 @@ public class EmployeeFrame extends javax.swing.JFrame {
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 678, Short.MAX_VALUE)
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
 
         getContentPane().add(panel, java.awt.BorderLayout.CENTER);
@@ -75,7 +75,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        EmployeeInternalFrame view = new EmployeeInternalFrame();
+        EmployeesInternalFrame view = new EmployeesInternalFrame();
         panel.add(view);
         view.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -110,6 +110,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EmployeeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

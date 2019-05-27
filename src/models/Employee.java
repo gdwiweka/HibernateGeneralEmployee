@@ -109,6 +109,15 @@ public class Employee implements Serializable {
         this.manager = manager;
         this.job = job;
     }
+
+    public Employee(Employee employee, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Employee(int parseInt, String firstName, String lastName, String email, String phoneNumber, java.sql.Date date, BigDecimal bigDecimal, BigDecimal bigDecimal0, Department department, Employee employee, Job job) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 

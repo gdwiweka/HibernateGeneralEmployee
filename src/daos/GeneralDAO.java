@@ -31,22 +31,25 @@ public class GeneralDAO<T> implements IGeneralDAO<T>{
         }
     }
 
-    public T getById(Short id) {
-        T location = null;
+    public T getById(Object id) {
+        T object = null;
         session = this.factory.openSession();
         transaction = session.beginTransaction();
         try {
-            String hql = "FROM Location WHERE Id = :a";
+            String hql = "FROM " + t.getClass().getSimpleName() + " WHERE id = :a";
             Query query = session.createQuery(hql);
             query.setParameter("a", id);
-            location = (T) query.uniqueResult();
+            object = (T) query.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();
             if (transaction != null) {
                 transaction.rollback();
             }
+        }finally {
+            factory.close();
         }
-        return location;
+        
+        return object;
     }
 
     public List<T> getData(Object keyword) {
